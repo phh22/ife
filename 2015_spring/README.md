@@ -1,4 +1,4 @@
-# 2015 春季学期
+### LOVE PIG
 
 手机访问的同学不要忘记请点击下方的“View all of README.md”查看完整信息。
 
