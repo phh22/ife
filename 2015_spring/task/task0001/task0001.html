@@ -46,24 +46,24 @@
              float: left;
              margin-top: 50px;
              background-color: #34ED16;
-             width: 300px;
+             width: 100%;
              height: 50px;
-             position: relative;
-             z-index: 1;
+            position: relative;
          }
         #box2{
             float: left;
             margin-top: 50px;
             background-color: greenyellow;
-            width: 100%;
+            width: 300px;
             height: 50px;
-            position: absolute;
-            z-index: -1;
+            margin-left: -100%;
+            position: relative;
+            left: -300px;
         }
         #box3{
             float: left;
             margin-top: 180px;
-            margin-left: -300px;
+            margin-left: -100%;
             background-color: bisque;
             width: 300px;
             height: 50px;
@@ -78,28 +78,24 @@
             float: left;
             margin-top: 50px;
             background-color: #34ED16;
-            width: 300px;
+            width: 100%;
             height: 50px;
-            position: relative;
-            z-index: 1;
         }
         #box6{
             float: left;
-            margin-top: 50px;
             background-color: blue;
-            width: 100%;
+            width: 300px;
             height: 50px;
-            position: absolute;
-            z-index: -1;
+            margin:50px 0px 0px -100%;
+            position: relative;
+            left: -300px;
         }
         #box7{
             float: right;
-            margin-top: 50px;
             background-color: aquamarine;
             width: 300px;
             height: 50px;
-            position: relative;
-            z-index: 1;
+            margin:50px 0px 0px -300px;
         }
         #box9{
             float: left;
@@ -115,7 +111,7 @@
             background-color: #ff0000;
             width: 100%;
         }
-        .box{
+        .box1{
             margin: 10px;
             float: left;
             margin: 10px;
@@ -123,6 +119,25 @@
             height: 200px;
             background-color: #34ED16;
         }
+        .box:after{
+            clear: both;
+            content:"";
+            display: block;
+            height: 0;
+        }
+        /*.a{*/
+            /*float: left;*/
+            /*width: 100px;*/
+            /*background-color: aqua;*/
+            /*height: 50px;*/
+        /*}*/
+        /*.a:after{*/
+            /*clear: both;*/
+            /*content:"";*/
+            /*display: block;*/
+            /*height: 0;*/
+        /*}*/
+
     </style>
 </head>
 <body>
@@ -137,50 +152,70 @@
     <div id="one">第一种居中方法</div>
     <div id="two">第二种居中方法</div>
 </div>
-<div id="box1">box1</div>
-<div id="box2">box2</div>
-<div id="box3">box3</div>
-<div id="box4">box4</div>
-<div>
-    <div id="box5">box5</div>
-    <div id="box6">box6</div>
-    <div id="box7">box7</div>
+<div style="padding: 0 0 0 300px;">
+    <div id="box1" class="box">box1</div>
+    <div id="box2" class="box">box2</div>
 </div>
-<div id="box9"></div>
-<div id="main1">
-    <div class="box">a</div>
-    <div class="box">aa</div>
-    <div class="box">aaa</div>
-    <div class="box">aaaa</div>
-    <div class="box">aaaaa</div>
-    <div class="box">aaaaaa</div>
-    <div class="box">aaaaaaa</div>
-    <div class="box">aaaaaaaa</div>
-    <div class="box">aaaaaaaaa</div>
-    <div class="box">aaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
-    <div class="box">aaaaaaaaaaa</div>
+<div id="box3" class="box">box3</div>
+<div id="box4" class="box">box4</div>
+<div style="padding: 0 0 0 300px;">
+    <div id="box5" class="box">box5</div>
+    <div id="box6" class="box">box6</div>
+    <div id="box7" class="box">box7</div>
 </div>
+<div id="box9" class="box"></div>
+<div id="main1" class="box">
+    <div class="box1" class="box">a</div>
+    <div class="box1" class="box">aa</div>
+    <div class="box1" class="box">aaa</div>
+    <div class="box1" class="box">aaaa</div>
+    <div class="box1" class="box">aaaaa</div>
+    <div class="box1" class="box">aaaaaa</div>
+    <div class="box1" class="box">aaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+    <div class="box1" class="box">aaaaaaaaaaa</div>
+</div>
+
+<!--<div style="width: 400px; margin-left:-200px;background-color: chartreuse">-->
+    <!--<div class="a"></div>-->
+    <!--<div class="a"></div>-->
+    <!--<div class="a"></div>-->
+    <!--<div class="a"></div>-->
+    <!--<div class="a"></div>-->
+    <!--<div class="a"></div>-->
+<!--</div>-->
+<!--<br><br><br><br><br><br><br><br>-->
+<!--<div  style="width: 400px;background-color: chartreuse">-->
+    <!--<div class="a"></div>-->
+    <!--<div class="a"></div>-->
+    <!--<div class="a"></div>-->
+    <!--<div class="a"></div>-->
+    <!--<div class="a"></div>-->
+    <!--<div class="a"></div>-->
+<!--</div>-->
 </body>
 </html>
