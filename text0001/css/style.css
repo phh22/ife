@@ -1,0 +1,61 @@
+#two1-2{
+    width: 680px;
+    margin: 0 0 0 80px;
+}
+.box{
+    width: 600px;
+    background-color: #ffffff;
+    padding: 30px 10px 10px 10px;
+    margin-bottom: 10px;
+    float: left;
+    border-top:solid 10px rgba(55, 75, 57, 0.22);
+    position: relative;
+    z-index: -1;
+}
+.box1{
+    float: left;
+    width: 50px;
+    position: absolute;
+    z-index: 1;
+    left: -50px;
+    top:20px;
+    background-color: aquamarine;
+}
+.box11{
+    background-color: darkmagenta;
+    color: #ffffff;
+    font-size: larger;
+}
+.box12{
+    background-color: mediumslateblue;
+    color: #ffffff;
+    font-size: larger;
+}
+.title{
+    color: blueviolet;
+    font-size: 16px;
+}
+.content{
+    font-size: 12px;
+    color: #666;
+    position: relative;
+    z-index: -1;
+}
+.number{
+    float: left;
+    margin-top: 20px;
+}
+.number li{
+    float: left;
+    margin: 5px;
+    list-style-type: none;
+}
+.number li a{
+    background-color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    color: #000000;
+}
+.number li a:hover{
+    background-color: blueviolet;
+}
