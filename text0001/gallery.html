@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="./css/head.css" type="text/css" />
+    <style>
+        .head li{
+            float: left;
+            padding:15px 20px 20px 20px;
+            list-style-type: none;
+            margin: 100px 2px 0 2px;
+            background-color: #ffffff;
+            border-top: solid 5px darkmagenta;
+        }
+        .head li:hover{
+            border-top: solid 5px darkorange;
+        }
+        .li1:focus {
+        }
+        .leftBox{
+            float: left;
+            width: 820px;
+            height: 1000px;
+            background-color: #ffffff;
+            margin-right: 20px;
+            margin-left: -110px;
+            position: relative;
+            z-index: -1;
+
+            -webkit-column-count: 4;
+            -moz-column-count: 4;
+            overflow: hidden;
+        }
+        .rightBox{
+            float: left;
+            width: 350px;
+            height: 1000px;
+            z-index: 0;
+        }
+        .A{
+            width: 190px;
+            /*float: left;*/
+            padding: 5px;
+        }
+        .A-pic{
+            width: 100%;
+            height: auto;
+        }
+        .A-main{
+            background-color: blueviolet;
+            margin-top: -5px;
+            padding: 10px;
+        }
+        .A-img{
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            border: solid 2px #ffffff;
+            text-align: center;
+            font-size: 50px;
+            color: #ffffff;
+        }
+        .A-text{
+            width: 100px;
+            margin: -60px 10px 0 65px;
+            color: #ffffff;
+            font-family: cursive;
+            font-size: 20px;
+        }
+        .B{
+            width: 190px;
+            /*float: left;*/
+            padding: 5px;
+        }
+        .B-pic{
+            width: 100%;
+            height: auto;
+        }
+        .B-main{
+            background-color: blue;
+            margin-top: -5px;
+            padding: 10px;
+        }
+        .B-img{
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            border: solid 2px #ffffff;
+            text-align: center;
+            font-size: 50px;
+            color: #ffffff;
+        }
+        .B-text{
+            width: 100px;
+            margin: -60px 10px 0 65px;
+            color: #ffffff;
+            font-family: cursive;
+            font-size: 20px;
+        }
+        /**/
+        .C{
+            width: 190px;
+            /*float: left;*/
+            padding: 5px;
+        }
+        .C-pic{
+            width: 100%;
+            height: auto;
+        }
+        .C-main{
+            background-color: #666666;
+            margin-top: -5px;
+            padding: 10px;
+        }
+        .C-img{
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            border: solid 2px #ffffff;
+            text-align: center;
+            font-size: 50px;
+            color: #ffffff;
+        }
+        .C-text{
+            width: 100px;
+            margin: -60px 10px 0 65px;
+            color: #ffffff;
+            font-family: cursive;
+            font-size: 20px;
+        }
+        .J{
+            width: 190px;
+            /*float: left;*/
+            padding: 5px;
+        }
+        .J-pic{
+            width: 100%;
+            height: auto;
+        }
+        .J-main{
+            background-color: darkcyan;
+            margin-top: -5px;
+            padding: 10px;
+        }
+        .J-img{
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            border: solid 2px #ffffff;
+            text-align: center;
+            font-size: 50px;
+            color: #ffffff;
+        }
+        .J-text{
+            width: 100px;
+            margin: -60px 10px 0 65px;
+            color: #ffffff;
+            font-family: cursive;
+            font-size: 20px;
+        }
+        .bottom{
+            float: left;
+            width: 100%;
+            background-color: #ffffff;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 500px;
+            font-size: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .pecentage{
+            width: 100%;
+            font-size: 20px;
+            background-color: #ffffff;
+        }
+        .pecentage li{
+            list-style-type: none;
+        }
+        .num{
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #000000;
+            color: #ffffff;
+            font-size: 15px;
+            align-content: center;
+        }
+        .pecentage1{
+
+        }
+
+    </style>
+</head>
+<body style="background-color: rgba(55, 75, 57, 0.22);width: 100%">
+<div style="width: 1200px;margin: 0 auto;">
+    <div id="first">
+        <div id="head">
+            <span>YourLOGO</span>
+            <ul>
+                <li>首页</li>
+                <li>文章</li>
+                <li>作品</li>
+                <li>关于</li>
+            </ul>
+        </div>
+        <div id="logo">
+            <a href="https://github.com/phh22/ife/blob/master/2015_spring/task/task0001/design/task0001_1_marked.png"><img src="./img/icon-github.png"/></a>
+        </div>
+    </div>
+    <div class="head">
+        <ul>
+            <li class="li1" style="border: solid 2px rgba(55, 75, 57, 0.22);border-top: solid 5px darkmagenta;">ALL</li>
+            <li class="li2">Javascript Utiil Functions</li>
+            <li class="li3">UL Components</li>
+            <li class="li4">Framework</li>
+            <li class="li5">Application</li>
+        </ul>
+    </div>
+    <div class="leftBox">
+        <div class="A">
+            <img src="./img/1.jpg" class="A-pic"/>
+            <div class="A-main">
+                <div class="A-img">A</div>
+                <div class="A-text">这是标题<br>这是文字，这是文字，这是文字，这是文字，这是文字，这是文字，这是文字</div>
+            </div>
+        </div>
+        <div class="B">
+            <img src="./img/2.jpg" class="B-pic"/>
+            <div class="B-main">
+                <div class="B-img">B</div>
+                <div class="B-text">这是标题<br>这是文字，这是文字，这是文字</div>
+            </div>
+        </div>
+        <div class="B">
+            <img src="./img/2.jpg" class="B-pic"/>
+            <div class="B-main">
+                <div class="B-img">B</div>
+                <div class="B-text">这是标题<br>这是文字，这是文字，这是文字，这是文字</div>
+            </div>
+        </div>
+        <div class="C">
+            <img src="./img/3.jpg" class="C-pic"/>
+            <div class="C-main">
+                <div class="C-img">C</div>
+                <div class="C-text">这是标题<br>这是文字这是文字，这是文字，这是文字，这是文字</div>
+            </div>
+        </div>
+        <div class="J">
+            <img src="./img/banner-bg.jpg" class="J-pic"/>
+            <div class="J-main">
+                <div class="J-img">J</div>
+                <div class="J-text">这是标题<br>这是文字，这是文字，这是文字，这是文字</div>
+            </div>
+        </div>
+        <div class="C">
+            <img src="./img/3.jpg" class="C-pic"/>
+            <div class="C-main">
+                <div class="C-img">C</div>
+                <div class="C-text">这是标题<br>这是文字</div>
+            </div>
+        </div>
+        <div class="J">
+            <img src="./img/banner-bg.jpg" class="J-pic"/>
+            <div class="J-main">
+                <div class="J-img">J</div>
+                <div class="J-text">这是标题<br>这是文字，这是文字这是文字，这是文字</div>
+            </div>
+        </div>
+        <div class="B">
+            <img src="./img/2.jpg" class="B-pic"/>
+            <div class="B-main">
+                <div class="B-img">B</div>
+                <div class="B-text">这是标题<br>这是文字，这是文字，这是文字，这是文字</div>
+            </div>
+        </div>
+        <div class="C">
+            <img src="./img/3.jpg" class="C-pic"/>
+            <div class="C-main">
+                <div class="C-img">C</div>
+                <div class="C-text">这是标题<br>这是文字，这是文字是文字，这是文字，这是文字</div>
+            </div>
+        </div>
+        <div class="J">
+            <img src="./img/banner-bg.jpg" class="J-pic"/>
+            <div class="J-main">
+                <div class="J-img">J</div>
+                <div class="J-text">这是标题<br>这是文字，这是文字，这是文字，这是文字，这是文字</div>
+            </div>
+        </div>
+        <div class="B">
+            <img src="./img/2.jpg" class="B-pic"/>
+            <div class="B-main">
+                <div class="B-img">B</div>
+                <div class="B-text">这是标题<br>这是文字，这是文字，这是文字，这是文字，这是文字</div>
+            </div>
+        </div>
+        <div class="C">
+            <img src="./img/3.jpg" class="C-pic"/>
+            <div class="C-main">
+                <div class="C-img">C</div>
+                <div class="C-text">这是标题<br>这是文文字，这是文字，这是文字，这是文字，这是文字</div>
+            </div>
+        </div>
+        <div class="B">
+            <img src="./img/2.jpg" class="B-pic"/>
+            <div class="B-main">
+                <div class="B-img">B</div>
+                <div class="B-text">这是标题<br>这是文字，这是文字，，这是文字</div>
+            </div>
+        </div>
+        <div class="C">
+            <img src="./img/3.jpg" class="C-pic"/>
+            <div class="C-main">
+                <div class="C-img">C</div>
+                <div class="C-text">这是标题<br>这是文字，这是文字，这是文字，这是文字，这是文字</div>
+            </div>
+        </div>
+        <div class="J">
+            <img src="./img/banner-bg.jpg" class="J-pic"/>
+            <div class="J-main">
+                <div class="J-img">J</div>
+                <div class="J-text">这是标题<br>这是文字，这是文字，这是这是文字，这是文字</div>
+            </div>
+        </div>
+        <div class="J">
+            <img src="./img/banner-bg.jpg" class="J-pic"/>
+            <div class="J-main">
+                <div class="J-img">J</div>
+                <div class="J-text">这是标题<br>这是文字，这是文字</div>
+            </div>
+        </div>
+    </div>
+    <div class="rightBox">
+        <div style="padding: 20px;background-color: #fff">
+            <input results="s" type="search" value="Keywords" style="margin:15px 0 0 30px;height: 50px;"/>
+            <input type="button" value="GO" style="margin-left: -10px;;height: 50px"/>
+        </div>
+        <div class="pecentage">
+            人气排行榜
+            <ul>
+                <li><div class="num">1</div><div  style="width: 150px;background-color: #ffffff;border: solid 1px #000"><div class="pecentage1"></div></div>ul.tree</li>
+                <li><div class="num">2</div><div  style="width: 150px;background-color: #ffffff;border: solid 1px #000"><div class="pecentage2"></div></div>util.trim</li>
+                <li><div class="num">3</div><div  style="width: 150px;background-color: #ffffff;border: solid 1px #000"><div class="pecentage3"></div></div>app.todo</li>
+                <li><div class="num">4</div><div  style="width: 150px;background-color: #ffffff;border: solid 1px #000"><div class="pecentage4"></div></div>ui.tab</li>
+                <li><div class="num">5</div><div  style="width: 150px;background-color: #ffffff;border: solid 1px #000"><div class="pecentage5"></div></div>util.addClass</li>
+                </ul>
+            </div>
+    </div>
+    <div class="bottom">点击查看更多</div>
+
+
+    <div style="float: left;width: 100%;background-color: #000">
+        <div style="width: 350px;margin: 0 auto">
+            <ul id="ul">
+                <li class="li">主页</li>
+                <li class="li">文章</li>
+                <li class="li">作品</li>
+                <li class="li">关于</li>
+            </ul>
+        </div>
+        <div style="float: left;margin-top: 40px">
+            <ul class="ul">
+                <li>学习资料</li><br/>
+                <li>LINK</li>
+                <li>Hover时样式</li>
+                <li>LINK</li>
+                <li>LINK</li>
+                <li>LINK</li>
+                <li>LINK</li>
+            </ul>
+            <ul class="ul">
+                <li>友情链接</li><br/>
+                <li>LINK</li>
+                <li>Hover时样式</li>
+                <li>LINK</li>
+                <li>LINK</li>
+            </ul>
+            <ul class="ul">
+                <li>学习资料</li><br/>
+                <li>LINK</li>
+                <li>Hover时样式</li>
+                <li>LINK</li>
+                <li>LINK</li>
+                <li>LINK</li>
+                <li>LINK</li>
+            </ul>
+            <ul class="ul">
+                <li>学习资料</li>
+                <br/>
+                <li>LINK</li>
+                <li>Hover时样式</li>
+                <li>LINK</li>
+                <li>LINK</li>
+                <li>LINK</li>
+                <li>LINK</li>
+            </ul>
+            <ul class="ul">
+                <li>友情链接</li>
+                <br/>
+                <li>LINK</li>
+                <li>Hover时样式</li>
+                <li>LINK</li>
+                <li>LINK</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
