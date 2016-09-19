@@ -1,21 +1,23 @@
 #two{
     display: block;
     width: 100%;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
 }
 #img img {
     float: left;
     width: 100%;
     height: 500px;
-    position: relative;
-    z-index: -1;
+
 }
 #article{
     float: right;
     width: 300px;
     position: absolute;
     z-index: 1;
-    right: 200px;
-    top: 400px;
+    right: 20px;
+    top: 300px;
     padding: 10px 10px 30px 10px;
     background-color: rgba(55, 75, 57, 0.22);
 }
@@ -100,19 +102,4 @@
     margin-left: 220px;
     margin-top: -50px;
     margin-bottom: 50px;
-}
-.li{
-    float: left;
-    list-style-type: none;
-    margin: 3px 20px;
-    color: #ffffff;
-}
-.ul li{
-    list-style-type: none;
-    color: #ffffff;
-    float: none;
-}
-.ul{
-    float: left;
-    margin: 0 20px 80px 20px;
 }
