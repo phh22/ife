@@ -47,3 +47,10 @@ span{
     float: left;
     margin: 0 20px 80px 20px;
 }
+.clearFloat:after{
+    content:".";
+    display:block;
+    height:0;
+    visibility:hidden;
+    clear:both;
+}
