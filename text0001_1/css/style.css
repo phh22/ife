@@ -307,6 +307,16 @@
 .two_time ul li:hover{
     background-color: mediumorchid;
 }
+.num{
+    margin-top: 10px;
+}
+.num1{
+    float: left;
+    margin:10px 5px 10px 5px;
+    padding: 10px;
+    list-style-type: none;
+    background-color: #ffffff;
+}
 /*.clearFloat{*/
     /*content:".";*/
     /*display:block;*/
