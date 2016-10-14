@@ -44,7 +44,7 @@ function uniqArray(arr) {
             if(arr[i] != b[j]){
                 z++;
             }
-            if(z===b.length-1){
+            if(z===b.length){
                 b[j].push(a[i]);
             }
         }
