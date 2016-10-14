@@ -50,7 +50,6 @@ function uniqArray(arr) {
                 b.push(a[i]);
             }
         }
-    }
     return b;
 }
 
