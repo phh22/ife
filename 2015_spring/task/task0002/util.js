@@ -22,11 +22,16 @@ function cloneObject(src) {
     var clone;
     if(src.constructor == Number ||src.constructor == String ||src.constructor == Boolean){
         clone=src;
-    }else if(src.constructor == Array || src.constructor == Object){
-        for(var i=0;i<src.length;i++){
-            clone[i]=src[i];
+    }else if(src.constructor == Object || src.constructor == Array){
+        for(var j in src){
+            if(src[j].constructor == Number ||src[j].constructor == String ||src[j].constructor == Boolean){
+                clone[j]=src[j];
+            }else if(src[j].constructor == Object || src[j].constructor == Array){
+                clone[j]=cloneObject(src[j]);
+            }
         }
     }
+    return clone;
 }
 
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
@@ -34,10 +39,9 @@ function uniqArray(arr) {
     var b=[];
     for(var i=0;i<arr.length;i++){
         for(var j=0;j< b.length;j++){
-            if(!arr[i]){
+            if(arr[i] != b[j]){
                 b.push(arr[i]);
             }
-        }
     }
     return b;
 }
@@ -202,3 +206,23 @@ function delegateEvent(element, tag, eventName, listener) {
     })
 }
 $.delegate = delegateEvent;
+
+// 实现一个简单的Query
+function $(selector) {
+    var sel=new RegExp("#");
+    if(sel.exec(selector)){
+        var id=document.getElementById(selector.replace(/\w+/));
+    }
+
+
+
+    var benzhu = function(n){
+        if(n==0||n==1){
+            return 1;
+        }else if(n<=-1){
+            return 0;
+        }else{
+            var chunzhu = n*benzhu(n-1);
+        }
+        return chunzhu
+    }
