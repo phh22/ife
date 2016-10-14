@@ -46,7 +46,7 @@ function uniqArray(arr) {
                 z++;
             }
             if(z===b.length){
-                b[j].push(a[i]);
+                b.push(a[i]);
             }
         }
     }
