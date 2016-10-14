@@ -62,11 +62,13 @@ function simpleTrim(str) {
         if(str[i] != ""){
             for(var j=str.length-1;j>=i;j--){
                 if(str[j] != ""){
-                    b[j]=str[j];
+                    for(var s=i;s<=j;s++){
+                        return str[s];
+                    }
+                }
                 }
             }
         }
-    }
 }
 
 // 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串
