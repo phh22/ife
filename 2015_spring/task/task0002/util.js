@@ -110,7 +110,7 @@ function isEmail(emailStr) {
 // 判断是否为手机号
 function isMobilePhone(phone) {
     // your implement
-    var a =/^\d{11}$/;
+    var a =/^1\d{10}$/;
     return a.test(phone);
 }
 
