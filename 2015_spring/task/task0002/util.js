@@ -35,6 +35,7 @@ function cloneObject(src) {
 }
 
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
+var arr=[a,b,b,a,c];
 function uniqArray(arr) {
     var b=[];
         b[0]=arr[0];
