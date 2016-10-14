@@ -125,15 +125,12 @@ function addClass(element, newClassName) {
         newName +="newClassName";
         element.className = newName;
     }
-
 }
 
 // 移除element中的样式oldClassName
 function removeClass(element, oldClassName) {
     // your implement
-    if(element.className == oldClassName){
-        oldClassName="";
-    }
+    element.className= element.className.replace(oldClassName,"");
 }
 
 // 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
