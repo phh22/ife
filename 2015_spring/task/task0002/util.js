@@ -60,15 +60,15 @@ function simpleTrim(str) {
     var b="";
     for(var i=0;i<str.length;i++){
         if(str[i] != " "){
-            for(var j=str.length-1;j>=i;j--){
-                if(str[j] != " "){
-                    for(var s=i;s<=j;s++){
-                        b+=str[s];
-                    }
-                    i=str.length;
-                    j>i+1;
-                }
+            break;
+        }
+    }
+    for(var j=str.length-1;j>=i;j--){
+        if(str[j] != " "){
+            for(var s=i;s<=j;s++){
+                b+=str[s];
             }
+            break
         }
     }
     return b;
