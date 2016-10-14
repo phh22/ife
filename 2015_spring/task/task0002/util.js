@@ -39,7 +39,7 @@ function uniqArray(arr) {
     var b=a[0];
     var z=0;
     for(var i=0;i<arr.length;i++){
-        for(var j=1;j< b.length;j++){
+        for(var j=0;j< b.length;j++){
             if(arr[i] != b[j]){
                 z++;
             }
