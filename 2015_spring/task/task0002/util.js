@@ -87,10 +87,11 @@ function each(arr, fn) {
     // your implement
     fn=function(item,index){
         for(var i=0;i<arr.length;i++){
-            index=1;
+            index=i;
             item=arr[i];
         }
     }
+    fn;
 }
 
 // 获取一个对象里面第一层元素的数量，返回一个整数
