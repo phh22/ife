@@ -39,12 +39,13 @@ var arr=[a,b,b,a,c];
 function uniqArray(arr) {
     var b=[];
         b[0]=arr[0];
-    var z=0;
     for(var i=0;i<arr.length;i++){
+        var z=0;
         for(var j=0;j< b.length;j++){
             if(arr[i] != b[j]){
                 z++;
             }
+        }
             if(z===b.length){
                 b.push(a[i]);
             }
