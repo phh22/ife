@@ -78,7 +78,7 @@ function simpleTrim(str) {
 // 尝试使用一行简洁的正则表达式完成该题目
 function trim(str) {
     var result ="";
-    result = str.replace(/^s+|s+$/g,""); //使用正则进行字符串替换
+    result = str.replace(/^\s+|\s+$/g,""); //使用正则进行字符串替换
     return result;
 }
 
