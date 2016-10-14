@@ -57,18 +57,21 @@ function uniqArray(arr) {
 // 假定空白字符只有半角空格、Tab
 // 练习通过循环，以及字符串的一些基本方法，分别扫描字符串str头部和尾部是否有连续的空白字符，并且删掉他们，最后返回一个完成去除的字符串
 function simpleTrim(str) {
-    var b;
+    var b="";
     for(var i=0;i<str.length;i++){
-        if(str[i] != ""){
+        if(str[i] != " "){
             for(var j=str.length-1;j>=i;j--){
-                if(str[j] != ""){
+                if(str[j] != " "){
                     for(var s=i;s<=j;s++){
-                        return str[s];
+                        b+=str[s];
                     }
-                }
+                    i=str.length;
+                    j>i+1;
                 }
             }
         }
+    }
+    return b;
 }
 
 // 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串
