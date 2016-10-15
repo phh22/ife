@@ -144,7 +144,6 @@ function isSiblingNode(element, siblingNode) {
 }
 
 // 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
-
 function getPosition(element) {
     // your implement
     var z ={};
@@ -172,17 +171,30 @@ element = document.getElementById("qqq");
 
 // 实现一个简单的Query
 function $(selector) {
-    if (selector == document) {
-        return document;
-    }
-    selector = selector.trim();
-    if (selector.indexOf(" ") !== -1) {
-        var selectorArr = selector.split(/\s+/);
-        return VQuery(selectorArr[1], VQuery(selectorArr[0])[0])[0];
-    } else {
-        return VQuery(selector,document)[0];
+    var a;
+    if(a=/^"#\w+"$]/){
+        a.replace(a,/^"\w+"$/);
+        return document.getElementById(a.test(selector));
+    }else if(a=/^".\w+"$]/){
+        a.replace(a,/^"\w+"$/);
+        return document.getElementsByClassName(a.test(selector))[0];
+    }else if(a=/^"\w+"$/){
+        return document.getElementsByTagName(a.test(selector));
+    }else if(a=/^"[\w+]"$/){
+        a.replace(a,/^"\w+"$/);
+        return document.attributes(a.test(selector));
+    }else if(a=/^"[\w+=\w+]"$/){
+        a.replace(a,/^"\w+=\w+"$/);
+        return document.attributes(a.test(selector));
+    }else if(a=/^"#\w+ .\w+"$/){
+        var x1= a.replace(a,/^#\w+"$/);
+        var y1= a.replace(a,/^"\w+"$/);
+        var x= document.getElementById(x1.test(selector)).childNodes;
+        var y= document.getElementsByClassName(y1.test(selector))[0];
+        return x,y;
     }
 }
+
 
 // 给一个element绑定一个针对event事件的响应，响应函数为listener
 function addEvent(element, event, listener) {
