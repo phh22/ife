@@ -155,7 +155,7 @@ function getPosition(element) {
             a += element.offsetLeft;
             b += element.offsetTop;
             element = element.parentNode;
-            getPosition(element);
+            c();
         }
         else{
             a=element.offsetLeft;
