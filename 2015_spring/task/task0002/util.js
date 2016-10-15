@@ -171,15 +171,15 @@ element = document.getElementById("qqq");
 
 // 实现一个简单的Query
 function $(selector) {
-    if(/\b^#\w+\b/.test(selector)){
+    if(/^#\w+/.test(selector)){
         return document.getElementById(selector);
-    }else if(/\b^.\w+\b/.test(selector)){
+    }else if(/^.\w+/.test(selector)){
         return document.getElementsByClassName(selector)[0];
-    }else if(/\b^\w+"\b/.test(selector)){
+    }else if(/^\w+/.test(selector)){
         return document.getElementsByTagName(selector);
-    }else if(/\b^[\w+]"\b/.test(selector)){
+    }else if(/^[\w+]/.test(selector)){
         return document.attributes(selector);
-    }else if(/\b^[\w+=\w+]\b/.test(selector)){
+    }else if(/^[\w+=\w+]/.test(selector)){
         return document.attributes(selector);
     }
     //else if(/\b^#\w+ .\w+\b/.test(selector)){
