@@ -164,6 +164,7 @@ function getPosition(element) {
         z.x=a;
         z.y=b;
     }
+    c();
     return z;
 }
 element = document.getElementById("qqq");
