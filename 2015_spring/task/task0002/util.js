@@ -147,19 +147,24 @@ function isSiblingNode(element, siblingNode) {
 function getPosition(element) {
     // your implement
     var z ={};
+    var a=0,b=0;
     var body = document.getElementsByTagName("body")[0];
-    if(z.parentNode != body){
-        z = z.parentNode;
-        z.x += element.offsetLeft;
-        z.y += element.offsetTop;
+    if(element.parentNode != body){
+        a += element.offsetLeft;
+        b += element.offsetTop;
+        element = element.parentNode;
         getPosition(element);
     }
     else{
-        z.x=element.offsetLeft;
-        z.y=element.offsetTop;
+        a=element.offsetLeft;
+        b=element.offsetTop;
     }
+    z.x=a;
+    z.y=b;
     return z;
 }
+element = document.getElementById("qqq");
+
 
 // 实现一个简单的Query
 function $(selector) {
