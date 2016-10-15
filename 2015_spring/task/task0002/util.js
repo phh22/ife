@@ -172,23 +172,36 @@ element = document.getElementById("qqq");
 // 实现一个简单的Query
 function $(selector) {
     if(/^#\w+/.test(selector)){
+        selector.replace("#","");
         return document.getElementById(selector);
     }else if(/^.\w+/.test(selector)){
+        selector.replace(".","");
         return document.getElementsByClassName(selector)[0];
     }else if(/^\w+/.test(selector)){
         return document.getElementsByTagName(selector);
     }else if(/^[\w+]/.test(selector)){
+        selector.replace("[","");
+        selector.replace("]","");
         return document.attributes(selector);
     }else if(/^[\w+=\w+]/.test(selector)){
+        selector.replace("[","");
+        selector.replace("]","");
         return document.attributes(selector);
     }
-    else if(/\b^#\w+ .\w+\b/.test(selector)){
-        var a=/\b^#\w+ .\w+\b/;
-        var x1= a.replace(/\b^#\w+ /,"");
-        var y1= a.replace(/.\w+\b/,"");
-        var x= document.getElementById(x1.test(selector)).childNodes;
-        var y= document.getElementsByClassName(y1.test(selector))[0];
-    }
+    //else if(/\b^#\w+ .\w+\b/.test(selector)){
+    //    var a=/\b^#\w+ .\w+\b/;
+    //    var x1= a.replace(/\b^#\w+ /,"");
+    //    var y1= a.replace(/.\w+\b/,"");
+    //    var x2="";
+    //    var y2="";
+    //    for(var i in selector){
+    //        if(selector[i-1]===" " & selector[i]==="." ){
+    //            for(var )
+    //        }
+    //    }
+    //    var x= document.getElementById(x1.test(selector)).childNodes;
+    //    var y= document.getElementsByClassName(y1.test(selector))[0];
+    //}
 }
 
 
