@@ -171,22 +171,18 @@ element = document.getElementById("qqq");
 
 // 实现一个简单的Query
 function $(selector) {
-    var a;
-    if(a=/^"#\w+"$]/){
-        a.replace(a,/^"\w+"$/);
-        return document.getElementById(a.test(selector));
-    }else if(a=/^".\w+"$]/){
-        a.replace(a,/^"\w+"$/);
-        return document.getElementsByClassName(a.test(selector))[0];
-    }else if(a=/^"\w+"$/){
-        return document.getElementsByTagName(a.test(selector));
-    }else if(a=/^"[\w+]"$/){
-        a.replace(a,/^"\w+"$/);
-        return document.attributes(a.test(selector));
-    }else if(a=/^"[\w+=\w+]"$/){
-        a.replace(a,/^"\w+=\w+"$/);
-        return document.attributes(a.test(selector));
-    }else if(a=/^"#\w+ .\w+"$/){
+    if(/\b^#\w+\b/.test(selector)){
+        return document.getElementById(selector);
+    }else if(/\b^.\w+\b/.test(selector)){
+        return document.getElementsByClassName(selector)[0];
+    }else if(/\b^\w+"\b/.test(selector)){
+        return document.getElementsByTagName(selector);
+    }else if(/\b^[\w+]"\b/.test(selector)){
+        return document.attributes(selector);
+    }else if(/\b^[\w+=\w+]\b/.test(selector)){
+        return document.attributes(selector);
+    }else if(/\b^#\w+ .\w+\b/.test(selector)){
+        var a=/\b^#\w+ .\w+\b/;
         var x1= a.replace(a,/^#\w+"$/);
         var y1= a.replace(a,/^"\w+"$/);
         var x= document.getElementById(x1.test(selector)).childNodes;
