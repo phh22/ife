@@ -144,10 +144,10 @@ function isSiblingNode(element, siblingNode) {
 }
 
 // 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
+var z ={};
+var a=0,b=0;
 function getPosition(element) {
     // your implement
-    var z ={};
-    var a=0,b=0;
     var body = document.getElementsByTagName("body")[0];
     if(element.parentNode != body){
         a += element.offsetLeft;
