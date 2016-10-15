@@ -172,20 +172,19 @@ element = document.getElementById("qqq");
 // 实现一个简单的Query
 function $(selector) {
     if(/^#\w+/.test(selector)){
-        selector.replace("#","");
-        return document.getElementById(selector);
+        return document.getElementById(selector.replace("#",""););
     }else if(/^.\w+/.test(selector)){
         selector.replace(".","");
-        return document.getElementsByClassName(selector)[0];
+        return document.getElementsByClassName(selector.replace(".",""))[0];
     }else if(/^\w+/.test(selector)){
         return document.getElementsByTagName(selector);
     }else if(/^[\w+]/.test(selector)){
-        selector.replace("[","");
-        selector.replace("]","");
+        selector=selector.replace("[","");
+        selector=selector.replace("]","");
         return document.attributes(selector);
     }else if(/^[\w+=\w+]/.test(selector)){
-        selector.replace("[","");
-        selector.replace("]","");
+        selector=selector.replace("[","");
+        selector=selector.replace("]","");
         return document.attributes(selector);
     }
     //else if(/\b^#\w+ .\w+\b/.test(selector)){
