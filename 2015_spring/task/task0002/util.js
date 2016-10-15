@@ -182,14 +182,13 @@ function $(selector) {
     }else if(/^[\w+=\w+]/.test(selector)){
         return document.attributes(selector);
     }
-    //else if(/\b^#\w+ .\w+\b/.test(selector)){
-    //    var a=/\b^#\w+ .\w+\b/;
-    //    var x1= a.replace(a,/^#\w+"$/);
-    //    var y1= a.replace(a,/^"\w+"$/);
-    //    var x= document.getElementById(x1.test(selector)).childNodes;
-    //    var y= document.getElementsByClassName(y1.test(selector))[0];
-    //    return x,y;
-    //}
+    else if(/\b^#\w+ .\w+\b/.test(selector)){
+        var a=/\b^#\w+ .\w+\b/;
+        var x1= a.replace(/\b^#\w+ /,"");
+        var y1= a.replace(/.\w+\b/,"");
+        var x= document.getElementById(x1.test(selector)).childNodes;
+        var y= document.getElementsByClassName(y1.test(selector))[0];
+    }
 }
 
 
