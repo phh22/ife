@@ -147,11 +147,12 @@ function isSiblingNode(element, siblingNode) {
 function getPosition(element) {
     // your implement
     var z ={};
+    var body = Element.getElementsByTagName("body")[0];
     if(z.parentNode != body){
         z = z.parentNode;
         z.x += element.offsetLeft;
         z.y += element.offsetTop;
-        getPosition(z);
+        getPosition(element);
     }
     else{
         z.x=element.offsetLeft;
