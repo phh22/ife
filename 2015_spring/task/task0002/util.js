@@ -172,7 +172,7 @@ element = document.getElementById("qqq");
 // 实现一个简单的Query
 function $(selector) {
     if(/^#\w+/.test(selector)){
-        return document.getElementById(selector.replace("#",""););
+        return document.getElementById(selector.replace("#",""));
     }else if(/^.\w+/.test(selector)){
         selector.replace(".","");
         return document.getElementsByClassName(selector.replace(".",""))[0];
