@@ -161,10 +161,9 @@ function getPosition(element) {
             a=element.offsetLeft;
             b=element.offsetTop;
         }
-
+        z.x=a;
+        z.y=b;
     }
-    z.x=a;
-    z.y=b;
     return z;
 }
 element = document.getElementById("qqq");
