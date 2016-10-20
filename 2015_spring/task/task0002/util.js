@@ -19,7 +19,7 @@ function isFunction(fn) {
 // 使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
 // 被复制的对象类型会被限制为数字、字符串、布尔、日期、数组、Object对象。不会包含函数、正则对象等
 function cloneObject(src) {
-    var clone;
+    var clone = new Object();
     if(src.constructor == Number ||src.constructor == String ||src.constructor == Boolean){
         clone=src;
     }else if(src.constructor == Object || src.constructor == Array){
@@ -167,6 +167,7 @@ function getPosition(element) {
     return z;
 }
 element = document.getElementById("qqq");
+getPosition(element);
 
 
 // 实现一个简单的Query
@@ -272,3 +273,4 @@ function $(selector) {
         }
         return chunzhu
     }
+}
