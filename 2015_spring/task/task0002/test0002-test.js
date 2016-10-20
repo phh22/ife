@@ -16,19 +16,19 @@ function isFunction(fn) {
 // 使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
 // 被复制的对象类型会被限制为数字、字符串、布尔、日期、数组、Object对象。不会包含函数、正则对象等
 function cloneObject(src) {
-    // your implement
-    var clone;
-    if(src.constructor==Number || src.constructor==String ||src.constructor==Boolean || src.constructor==Date ){
-        clone = src;
-    }else if(src.constructor==Array || src.constructor==Object){
-        for(var i in src){
-            if(src[i].constructor==Number || src[i].constructor==String ||src[i].constructor==Boolean || src[i].constructor==Date ){
-                clone[i]= src[i];
-            }else if(src[i].constructor==Array || src[i].constructor==Object){
-                clone[i] = cloneObject(src[i]);
+    var clone = new Object();
+    if(src.constructor == Number ||src.constructor == String ||src.constructor == Boolean){
+        clone=src;
+    }else if(src.constructor == Object || src.constructor == Array){
+        for(var j in src){
+            if(src[j].constructor == Number ||src[j].constructor == String ||src[j].constructor == Boolean){
+                clone[j]=src[j];
+            }else if(src[j].constructor == Object || src[j].constructor == Array){
+                clone[j]=cloneObject(src[j]);
             }
         }
     }
+    return clone;
 }
 
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
@@ -137,22 +137,25 @@ function getPosition(element) {
     // your implement
     var s={};
     var a= 0,b=0;
-    var body=document.getElementsByName("body")[0];
-    function c(){
-        if(element.parentNode == "body"){
-            a = element.offsetLeft;
-            b = element.offsetTop;
-        }else{
-            a += element.offsetLeft;
-            b += element.offsetTop;
-            element=element.parentNode;
-            c();
+    var body=document.getElementsByTagName("body")[0];
+    if(element.parentNode == body){
+        a=element.offsetLeft;
+        b=element.offsetTop;
+    }else{
+        while(element.parentNode != body){
+            a+=element.offsetLeft;
+            b+=element.offsetTop;
+            element = element.parentNode;
         }
-        s.x = a;
-        s.y = b;
-        return s;
+        a+=element.offsetLeft;
+        b+=element.offsetTop;
     }
+    s.z=a;
+    s.y=b;
+    return s;
 }
+element = document.getElementById("qqq");
+getPosition(element);
 
 // 实现一个简单的Query
 function $(selector) {
