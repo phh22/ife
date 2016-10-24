@@ -157,6 +157,7 @@ function getPosition(element) {
 element = document.getElementById("qqq");
 getPosition(element);
 
+
 // 实现一个简单的Query
 function $(selector) {
     var b="";
@@ -225,3 +226,88 @@ function delegateEvent(element, tag, eventName, listener) {
     })
 }
 $.delegate = delegateEvent;
+
+// 判断是否为IE浏览器，返回-1或者版本号
+function isIE() {
+    // your implement
+    var explorer = window.navigator.userAgent.toLowerCase() ;
+    if (explorer.indexOf("msie") >= 0) {
+        var ver=explorer.match(/msie ([\d.]+)/)[1];
+        return {type:"IE",version:ver};
+    }else{
+        return -1;
+    }
+}
+
+// 设置cookie
+function setCookie(cookieName, cookieValue, expiredays) {
+    // your implement
+    var exdate=new Date();
+    exdate.setDate(exdate.getDate()+expiredays);
+    document.cookie=cookieName+ "=" +encodeURIComponent(cookieValue)+ ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+}
+
+// 获取cookie值
+function getCookie(cookieName) {
+    // your implement
+    if (document.cookie.length>0)
+    {
+        c_start=document.cookie.indexOf(cookieName + "=");
+        if (c_start!=-1)
+        {
+            c_start=c_start + c_name.length+1;
+            c_end=document.cookie.indexOf(";",c_start);
+            if (c_end==-1) c_end=document.cookie.length;
+            return unescape(document.cookie.substring(c_start,c_end));
+        }
+    }
+    return ""
+}
+
+//学习Ajax，并尝试自己封装一个Ajax方法。实现如下方法：
+function ajax(url, options) {
+    for(var key in options){
+        defaults[key] = opts[key];
+    }
+
+    if(typeof options.data === 'object'){
+        var str = '';
+        for(var key in options.data){
+            str += key + '=' + defaults.data[key] + '&';
+        }
+        options.data = str.substring(0, str.length - 1);
+    }
+
+    options.method = defaults.method.toUpperCase();    //处理 method
+    options.cache = defaults.cache ? '' : '&' + new Date().getTime() ;//处理 cache
+
+    if(options.method === 'GET' && (options.data || options.cache))    options.url += '?' + options.data + options.cache;
+      //1.创建ajax对象
+    var oXhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+       //2.和服务器建立联系，告诉服务器你要取什么文件
+    oXhr.open(options.method, url, options.async);
+      //3.发送请求
+    if(options.method === 'GET')
+        oXhr.send(null);
+    else{
+        oXhr.setRequestHeader("Content-type", options.contentType);
+        oXhr.send(options.data);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
