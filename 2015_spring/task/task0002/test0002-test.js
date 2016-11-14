@@ -255,7 +255,7 @@ function getCookie(cookieName) {
         c_start=document.cookie.indexOf(cookieName + "=");
         if (c_start!=-1)
         {
-            c_start=c_start + c_name.length+1;
+            c_start=c_start + cookieName.length+1;
             c_end=document.cookie.indexOf(";",c_start);
             if (c_end==-1) c_end=document.cookie.length;
             return unescape(document.cookie.substring(c_start,c_end));
@@ -266,38 +266,53 @@ function getCookie(cookieName) {
 
 //学习Ajax，并尝试自己封装一个Ajax方法。实现如下方法：
 function ajax(url, options) {
-    for(var key in options){
-        defaults[key] = opts[key];
-    }
-
-    if(typeof options.data === 'object'){
-        var str = '';
-        for(var key in options.data){
-            str += key + '=' + defaults.data[key] + '&';
-        }
-        options.data = str.substring(0, str.length - 1);
-    }
-
-    options.method = defaults.method.toUpperCase();    //处理 method
-    options.cache = defaults.cache ? '' : '&' + new Date().getTime() ;//处理 cache
-
-    if(options.method === 'GET' && (options.data || options.cache))    options.url += '?' + options.data + options.cache;
-      //1.创建ajax对象
-    var oXhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-       //2.和服务器建立联系，告诉服务器你要取什么文件
-    oXhr.open(options.method, url, options.async);
-      //3.发送请求
-    if(options.method === 'GET')
-        oXhr.send(null);
-    else{
-        oXhr.setRequestHeader("Content-type", options.contentType);
-        oXhr.send(options.data);
-    }
+        var xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                var text = xmlhttp.responseText;
+                options.onsuccess(text, xmlhttp);
+            }
+        };
+        xmlhttp.open("POST",url,true);
+    debugger;
+        xmlhttp.send("name="+options.data.name+"&password="+options.data.password);
 }
 
 
 
-
+function getCookie(c_name)
+{
+    if (document.cookie.length>0) {
+        c_start=document.cookie.indexOf(c_name + "=");
+        if (c_start!=-1) {
+            c_start=c_start + c_name.length+1;
+            debugger;
+            c_end=document.cookie.indexOf(";",c_start);
+            if (c_end==-1) c_end=document.cookie.length;
+            return unescape(document.cookie.substring(c_start,c_end))
+        }
+    }
+    return ""
+}
+function setCookie(c_name,value,expiredays) {
+    var exdate=new Date();
+    exdate.setDate(exdate.getDate()+expiredays);
+    document.cookie=c_name+ "=" +escape(value)+ ((expiredays==null) ? "" : "; expires="+exdate.toGMTString())
+}
+function checkCookie() {
+    username=getCookie('username');
+    if (username!=null && username!="") {
+        alert('Welcome again '+username+'!')
+    } else {
+        username=prompt('Please enter your name:',"");
+        if (username!=null && username!="")
+        {
+            setCookie('username',username,365)
+        }
+    }
+}
 
 
 
